@@ -1,23 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import ParticleBackground from "./ParticleBackground";
+import Matt from "./assets/Matt-removebg-preview.png";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="background">
+        <ParticleBackground />
+      </div>
+      <div className="content">
+        <h1 className="title">VirtualMii</h1>
+        <div className="body">
+          <div
+            className="glassmorph"
+            style={{ width: "100%", height: "fit-content" }}
+          >
+            <h6 className="body-text">
+              The innovative new solution to interactivity and engagement in
+              online classes
+            </h6>
+          </div>
+        </div>
+        <div className="mii">
+          <img src={Matt} alt="matt" />
+        </div>
+      </div>
     </div>
   );
 }

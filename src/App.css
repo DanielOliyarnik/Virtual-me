@@ -1,38 +1,64 @@
+@font-face {
+  font-family: "Continuum";
+  src: local("Continuum"), url(./assets/contb.ttf) format("truetype");
+}
 .App {
   text-align: center;
+  background-color: darkblue;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.background {
+  overflow: hidden;
+  overflow-y: hidden;
+  overflow-y: hidden;
+}
+.content {
+  z-index: 100;
+  position: absolute;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 5fr 5fr 1fr;
+  grid-template-rows: 1fr 1fr 10fr 1fr;
+  grid-template-areas:
+    ". . . ."
+    ". title . ."
+    ". body character ."
+    ". . . .";
+  gap: 10px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.title {
+  font-family: Continuum;
+  color: #fff;
+  margin: 0;
+  text-align: left;
+  font-weight: 500;
+  font-size: 120px;
+  grid-area: title;
+}
+.body {
+  grid-area: body;
+}
+.glassmorph {
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(4.5px);
+  -webkit-backdrop-filter: blur(4.5px);
+  border-radius: 10px;
+  /* border: 1px solid rgba(255, 255, 255, 0.18); */
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.body-text {
+  font-size: 48px;
+  color: #fff;
+  margin: 0px;
+  font-weight: lighter;
+  padding: 50px;
+  text-align: left;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.mii {
+  grid-area: character;
 }
