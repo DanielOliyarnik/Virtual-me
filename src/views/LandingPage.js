@@ -4,8 +4,10 @@ import React from "react";
 import Matt from "../assets/Matt-removebg-preview.png";
 import GetAppIcon from "@material-ui/icons/GetApp";
 import "./LandingPage.css";
+import { useHistory } from "react-router";
 
 const LandingPage = (props) => {
+  const history = useHistory();
   return (
     <>
       <h1 className="title">VirtualMii</h1>
@@ -44,9 +46,6 @@ const LandingPage = (props) => {
                 padding: 30,
               }}
             >
-              {/* <div style={{display: 'flex', justifyContent:"center", alignItems:"center"}}>
-                
-              </div> */}
               <GetAppIcon
                 style={{ paddingRight: 10, fontSize: 36, color: "#fff" }}
               />
@@ -72,6 +71,7 @@ const LandingPage = (props) => {
                 textAlign: "left",
                 padding: 30,
               }}
+              onClick={() => history.push("/creator")}
             >
               <p
                 style={{
