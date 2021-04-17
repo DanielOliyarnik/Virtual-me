@@ -1,6 +1,8 @@
-import { Button, Fab } from "@material-ui/core";
+import { Fab, Grid } from "@material-ui/core";
+
 import React from "react";
 import Matt from "../assets/Matt-removebg-preview.png";
+import GetAppIcon from "@material-ui/icons/GetApp";
 import "./LandingPage.css";
 
 const LandingPage = (props) => {
@@ -8,70 +10,82 @@ const LandingPage = (props) => {
     <>
       <h1 className="title">VirtualMii</h1>
       <div className="body">
-        <div
-          className="glassmorph"
-          style={{ width: "100%", height: "fit-content" }}
-        >
-          <h6 className="body-text">
-            The innovative new solution to interactivity and engagement in
-            online classes
-          </h6>
-        </div>
-        <div style={{ display: "flex" }}>
-          <Fab
-            variant="extended"
-            style={{
-              background: "darkorange",
-              marginTop: 25,
-              textAlign: "left",
-              padding: 30,
-            }}
-          >
-            <p
+        <Grid container style={{ paddingLeft: 50 }}>
+          <Grid item xs={12} sm={6}>
+            <div
+              className="glassmorph"
+              style={{ width: "100%", height: "100%" }}
+            >
+              <h6 className="body-text">
+                The innovative new solution to interactivity and engagement in
+                online classes
+              </h6>
+            </div>
+          </Grid>
+          <Grid item xs={12} sm={6}>
+            <div
               style={{
-                color: "#fff",
-                fontWeight: "light",
-                fontSize: 36,
-                textTransform: "capitalize",
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                height: "100%",
               }}
             >
-              Download Now
-            </p>
-          </Fab>
-        </div>
-      </div>
-      <div className="mii">
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "space-around",
-            alignItems: "center",
-            height: "100%",
-          }}
-        >
-          <img src={Matt} alt="matt" />
-          <Fab
-            variant="extended"
-            style={{
-              background: "darkorange",
-              marginTop: 25,
-              textAlign: "left",
-              padding: 30,
-            }}
-          >
-            <p
+              <img src={Matt} alt="matt" />
+            </div>
+          </Grid>
+          <Grid item xs={12} sm={6}>
+            <Fab
+              variant="extended"
               style={{
-                color: "#fff",
-                fontWeight: "light",
-                fontSize: 36,
-                textTransform: "capitalize",
+                background: "darkorange",
+                marginTop: 25,
+                textAlign: "left",
+                padding: 30,
               }}
             >
-              Create
-            </p>
-          </Fab>
-        </div>
+              {/* <div style={{display: 'flex', justifyContent:"center", alignItems:"center"}}>
+                
+              </div> */}
+              <GetAppIcon
+                style={{ paddingRight: 10, fontSize: 36, color: "#fff" }}
+              />
+
+              <p
+                style={{
+                  color: "#fff",
+                  fontWeight: "light",
+                  fontSize: 36,
+                  textTransform: "capitalize",
+                }}
+              >
+                Download
+              </p>
+            </Fab>
+          </Grid>
+          <Grid item xs={12} sm={6}>
+            <Fab
+              variant="extended"
+              style={{
+                background: "darkorange",
+                marginTop: 25,
+                textAlign: "left",
+                padding: 30,
+              }}
+            >
+              <p
+                style={{
+                  color: "#fff",
+                  fontWeight: "light",
+                  fontSize: 36,
+                  textTransform: "capitalize",
+                }}
+              >
+                Customize My Avatar
+              </p>
+            </Fab>
+          </Grid>
+        </Grid>
       </div>
     </>
   );

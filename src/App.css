@@ -18,13 +18,13 @@
   top: 0;
   width: 100vw;
   height: 100vh;
-  display: grid;
+  /* display: grid;
   grid-template-columns: 1fr 5fr 5fr 1fr;
   grid-template-rows: 1fr 1fr 10fr 1fr;
   grid-template-areas:
     ". . . ."
     ". title character character"
     ". body character character"
-    ". . . .";
-  gap: 10px;
+    ". . . ."; */
+  /* gap: 10px; */
 }
