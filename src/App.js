@@ -1,23 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import ParticleBackground from "./ParticleBackground";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+      <div className="background">
+        <ParticleBackground />
+      </div>
+      <div className="content">
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            fontSize: 100,
+            fontFamily: "Continuum",
+          }}
         >
-          Learn React
-        </a>
-      </header>
+          <h1 className="title">VirtualMii</h1>
+        </div>
+      </div>
     </div>
   );
 }
