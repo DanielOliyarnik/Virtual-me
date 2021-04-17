@@ -3,6 +3,9 @@ import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
 import "./App.css";
 import ParticleBackground from "./ParticleBackground";
 import LandingPage from "./views/LandingPage";
+import Login from "./views/Login";
+import Signup from "./views/Signup";
+import CharacterCreator from "./views/CharacterCreator";
 
 function App() {
   return (
@@ -27,8 +30,17 @@ function App() {
             </Toolbar>
           </AppBar>
           <Switch>
-            <Route path="/">
+            <Route exact path="/">
               <LandingPage />
+            </Route>
+            <Route exact path="/login">
+              <Login />
+            </Route>
+            <Route exact path="/signup">
+              <Signup />
+            </Route>
+            <Route exact path="/creator">
+              <CharacterCreator />
             </Route>
           </Switch>
         </Router>
