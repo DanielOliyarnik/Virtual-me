@@ -1,6 +1,11 @@
+import { AppBar, Toolbar, Button } from "@material-ui/core";
+import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
 import "./App.css";
 import ParticleBackground from "./ParticleBackground";
-import Matt from "./assets/Matt-removebg-preview.png";
+import LandingPage from "./views/LandingPage";
+import Login from "./views/Login";
+import Signup from "./views/Signup";
+import CharacterCreator from "./views/CharacterCreator";
 
 function App() {
   return (
@@ -9,21 +14,36 @@ function App() {
         <ParticleBackground />
       </div>
       <div className="content">
-        <h1 className="title">VirtualMii</h1>
-        <div className="body">
-          <div
-            className="glassmorph"
-            style={{ width: "100%", height: "fit-content" }}
+        <Router>
+          <AppBar
+            color="transparent"
+            position="static"
+            style={{ background: "transparent", boxShadow: "none" }}
           >
-            <h6 className="body-text">
-              The innovative new solution to interactivity and engagement in
-              online classes
-            </h6>
-          </div>
-        </div>
-        <div className="mii">
-          <img src={Matt} alt="matt" />
-        </div>
+            <Toolbar style={{ dispay: "flex", justifyContent: "flex-end" }}>
+              <Button style={{ color: "white", textTransform: "capitalize" }}>
+                Login
+              </Button>
+              <Button style={{ color: "white", textTransform: "capitalize" }}>
+                Sign Up
+              </Button>
+            </Toolbar>
+          </AppBar>
+          <Switch>
+            <Route exact path="/">
+              <LandingPage />
+            </Route>
+            <Route exact path="/login">
+              <Login />
+            </Route>
+            <Route exact path="/signup">
+              <Signup />
+            </Route>
+            <Route exact path="/creator">
+              <CharacterCreator />
+            </Route>
+          </Switch>
+        </Router>
       </div>
     </div>
   );
