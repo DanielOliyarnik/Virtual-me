@@ -4,7 +4,7 @@ import { LinearProgress } from "@material-ui/core";
 
 //workaround to get custom colors working with Linear progress
 const ColoredLinearProgress = (props) => {
-  const { classes, score } = props;
+  const { classes } = props;
   return (
     <LinearProgress
       style={{ margin: 20 }}

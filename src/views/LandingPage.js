@@ -19,8 +19,8 @@ const LandingPage = (props) => {
               style={{ width: "100%", height: "100%" }}
             >
               <h6 className="body-text">
-                The innovative new solution to interactivity and engagement in
-                online classes
+                The innovative solution to interactivity and engagement in
+                online meetings.
               </h6>
             </div>
           </Grid>
