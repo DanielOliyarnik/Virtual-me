@@ -217,7 +217,6 @@ const CharacterCreator = (props) => {
       style={{
         display: "flex",
         flexDirection: "column",
-        justifyContent: "center",
         alignItems: "center",
         height: "calc(100% - 70px)",
       }}
@@ -227,8 +226,8 @@ const CharacterCreator = (props) => {
         style={{ height: "70vh", paddingLeft: 75, paddingRight: 75 }}
       >
         <Grid item xs={12} sm={6}>
-          <div className="glassmorph" style={{ width: "100%", height: "30%" }}>
-            <h1>Generate Personalized Avatar</h1>
+          <div className="glassmorph" style={{ width: "100%", height: "40%" }}>
+            <h1 style={{ paddingTop: 20 }}>Generate Personalized Avatar</h1>
             <label htmlFor="file-upload" className="custom-file-upload">
               Upload Face
             </label>
@@ -244,8 +243,8 @@ const CharacterCreator = (props) => {
               )
             )}
           </div>
-          <div className="glassmorph" style={{ width: "100%", height: "70%" }}>
-            <h1>Create Custom Avatar</h1>
+          <div className="glassmorph" style={{ width: "100%", height: "60%" }}>
+            <h1 style={{ paddingTop: 20 }}>Create Custom Avatar</h1>
             <Grid container>
               <Grid item xs={12} sm={6}>
                 <FormControl component="fieldset">

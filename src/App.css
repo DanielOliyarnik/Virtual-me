@@ -5,6 +5,7 @@
 .App {
   text-align: center;
   background-color: darkblue;
+  background-image: linear-gradient(to top right, #07008b, #3c34d1);
 }
 
 .background {
