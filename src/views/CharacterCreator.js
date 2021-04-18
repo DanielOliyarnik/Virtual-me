@@ -14,17 +14,27 @@ import firebase from "../config";
 import faceList from "../assets/faceId.json";
 import "./CharacterCreator.css";
 import LinearProgress from "../components/LinearProgress";
+import { useHistory } from "react-router";
 
 const CharacterCreator = (props) => {
+  const history = useHistory();
   const [loading, setLoading] = useState(0);
   const [custom, setCustom] = useState(false);
   const [loading2, setLoading2] = useState(0);
   const [avatar, setAvatar] = useState(null);
   const [confidence, setConfidence] = useState(0);
+  const [loggedIn, setLoggedIn] = useState(false);
   const [attributes, setAttributes] = useState({
     age: 1,
     skin: 1,
     gender: "female",
+  });
+  firebase.auth().onAuthStateChanged(function (user) {
+    if (user) {
+      setLoggedIn(true);
+    } else {
+      setLoggedIn(false);
+    }
   });
   const skinMarks = [
     {
@@ -89,6 +99,11 @@ const CharacterCreator = (props) => {
           ).then((response) => {
             setLoading(40);
             response.json().then((data) => {
+              if (!data.length) {
+                alert("No face detected, Please upload an image of a face");
+                setLoading(0);
+                return;
+              }
               setLoading(50);
               console.log(faceList);
               let body = {
@@ -346,20 +361,23 @@ const CharacterCreator = (props) => {
                 ).toFixed(2)}% Match`}</p>
               )}
 
-              <Fab
-                variant="extended"
-                style={{
-                  background: "darkorange",
-                  color: "#fff",
-                  textTransform: "capitalize",
-                  fontSize: 16,
-                  paddingLeft: 25,
-                  paddingRight: 25,
-                  marginBottom: 10,
-                }}
-              >
-                Sign Up and Save Your Avatar
-              </Fab>
+              {!loggedIn && (
+                <Fab
+                  variant="extended"
+                  style={{
+                    background: "darkorange",
+                    color: "#fff",
+                    textTransform: "capitalize",
+                    fontSize: 16,
+                    paddingLeft: 25,
+                    paddingRight: 25,
+                    marginBottom: 10,
+                  }}
+                  onClick={() => history.push("/signup")}
+                >
+                  Sign Up and Save Your Avatar
+                </Fab>
+              )}
             </div>
           </Fade>
         </Grid>

@@ -1,13 +1,36 @@
-import { Fab, Grid } from "@material-ui/core";
+import { Fab, Fade, Grid } from "@material-ui/core";
 
 import React from "react";
-import Matt from "../assets/Matt-removebg-preview.png";
+import One from "../assets/Kristofer-removebg-preview.png";
+import Two from "../assets/Lucian-removebg-preview.png";
+import Three from "../assets/Payton-removebg-preview.png";
+import Four from "../assets/Zhen-removebg-preview.png";
+import Five from "../assets/Trey-removebg-preview.png";
 import GetAppIcon from "@material-ui/icons/GetApp";
 import "./LandingPage.css";
 import { useHistory } from "react-router";
+import { useState } from "react";
+import { useEffect } from "react";
 
 const LandingPage = (props) => {
   const history = useHistory();
+  const [fade, setFade] = useState(true);
+  const [image, setImage] = useState(0);
+  const images = [One, Two, Three, Four, Five];
+  useEffect(() => {
+    const sleep = (ms) => {
+      return new Promise((resolve) => setTimeout(resolve, ms));
+    };
+    function changeImage() {
+      setFade(false);
+      sleep(2000);
+      setImage((prev) => prev + 1);
+      setFade(true);
+    }
+    setInterval(changeImage, 5000);
+    return () => clearInterval(changeImage, 5000);
+  }, []);
+  console.log(image);
   return (
     <>
       <h1 className="title">VirtualMii</h1>
@@ -33,7 +56,9 @@ const LandingPage = (props) => {
                 height: "100%",
               }}
             >
-              <img src={Matt} alt="matt" />
+              <Fade in={fade} timeout={{ enter: 1000, exit: 0 }}>
+                <img src={images[image % 5]} alt="matt" />
+              </Fade>
             </div>
           </Grid>
           <Grid item xs={12} sm={6}>
