@@ -1,0 +1,18 @@
+input[type="file"] {
+  display: none;
+}
+.custom-file-upload {
+  border: 1px solid #fb8c01;
+  background-color: #fb8c01;
+  border-radius: 24px;
+  display: inline-block;
+  padding: 12px 24px;
+  cursor: pointer;
+  color: #fff;
+}
+
+h2 {
+  color: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+  padding-top: 25px;
+}
