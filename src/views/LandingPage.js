@@ -74,8 +74,21 @@ const LandingPage = (props) => {
               <GetAppIcon
                 style={{ paddingRight: 10, fontSize: 36, color: "#fff" }}
               />
+              <a
+                href="/VirtualMe.zip"
+                download
+                style={{
+                  color: "#fff",
+                  fontWeight: "light",
+                  fontSize: 36,
+                  textTransform: "capitalize",
+                  textDecoration: "none",
+                }}
+              >
+                download
+              </a>
 
-              <p
+              {/* <p
                 style={{
                   color: "#fff",
                   fontWeight: "light",
@@ -84,7 +97,7 @@ const LandingPage = (props) => {
                 }}
               >
                 Download
-              </p>
+              </p> */}
             </Fab>
           </Grid>
           <Grid item xs={12} sm={6}>
