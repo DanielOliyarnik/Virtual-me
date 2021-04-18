@@ -12,25 +12,25 @@ function App() {
     <div className="App">
       <div className="background">
         <ParticleBackground />
-      </div>
-      <div className="content">
-        <Router>
-          <AppBar />
-          <Switch>
-            <Route exact path="/">
-              <LandingPage />
-            </Route>
-            <Route exact path="/login">
-              <Login />
-            </Route>
-            <Route exact path="/signup">
-              <Signup />
-            </Route>
-            <Route exact path="/creator">
-              <CharacterCreator />
-            </Route>
-          </Switch>
-        </Router>
+        <div className="content">
+          <Router>
+            <AppBar />
+            <Switch>
+              <Route exact path="/">
+                <LandingPage />
+              </Route>
+              <Route exact path="/login">
+                <Login />
+              </Route>
+              <Route exact path="/signup">
+                <Signup />
+              </Route>
+              <Route exact path="/creator">
+                <CharacterCreator />
+              </Route>
+            </Switch>
+          </Router>
+        </div>
       </div>
     </div>
   );

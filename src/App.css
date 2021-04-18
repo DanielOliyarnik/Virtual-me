@@ -18,6 +18,9 @@
   top: 0;
   width: 100vw;
   height: 100vh;
+  overflow: hidden;
+  overflow-y: hidden;
+  overflow-y: hidden;
 }
 .glassmorph {
   background: rgba(255, 255, 255, 0.15);
